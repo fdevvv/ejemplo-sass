@@ -1,0 +1,97 @@
+/* Cards */
+
+.cards {
+    @include flex(null, center, null);
+    gap: $spacing-xsmall;
+    flex-wrap: wrap;
+
+    .box {
+        @include flex(column, null, null);
+        gap: $spacing-xsmall;
+        flex: 1 1 clamp(300px, 30%, 400px);
+        &__info {
+            @include flex(column, null, null);
+            display: flex;
+            padding: $spacing-medium;
+        }
+        &__title {
+            font-family: $font-title;
+            font-size: $text-medium;
+            color: $primary;
+        }
+        &__subtitle {
+            margin-top: 0.6rem;
+            color: $secondary;
+            font-size: $text-small;
+        }
+        &__text {
+            margin-top: 1rem;
+            color: $text-color;
+            font-size: $text-base;
+        }
+    }
+}
+
+/* Info */
+
+.info {
+    @include flex(null, null, center);
+    padding: $spacing-large;
+    &__img {
+        flex: 1 1 50%;
+    }
+    &__box {
+        @include flex(column, null, null);
+        flex: 1 1 50%;
+        padding: $spacing-large;
+    }
+    &__title {
+        font-size: $text-large;
+        font-family: $font-title;
+        color: $primary;
+    }
+    &__description {
+        font-size: $text-medium;
+        font-weight: 300;
+    }
+    &__link {
+        @include flex(null, null, center);
+        font-size: $text-small;
+        color: $primary;
+        gap: $spacing-xsmall;
+        margin-top: 2rem;
+        & path {
+            color: $secondary;
+    stroke-width: 5px;
+        }
+    }
+}
+
+//media queries
+@media screen and (max-width: 879px) {
+    .info {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .box__text {
+        font-size: 2em;
+    }
+
+    .box__subtitle {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .info {
+        padding: $spacing-xsmall;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .cards {
+        padding: 1rem;
+    }
+}

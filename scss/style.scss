@@ -1,0 +1,14 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Roboto+Slab:wght@300;500&display=swap');
+
+//globals
+@import './variables';
+@import './globals';
+@import './mixins';
+
+//views
+@import './views/home';
+@import './views/gallery';
+
+//partials
+@import './partials/header';
